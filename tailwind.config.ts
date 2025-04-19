@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,32 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+        sage: {
+          '50': '#f3f8f6',
+          '100': '#e3efea',
+          '200': '#c9dfd5',
+          '300': '#a3c7b8',
+          '400': '#76aa96',
+          '500': '#568e7a',
+          '600': '#417262',
+          '700': '#355c50',
+          '800': '#2c4a42',
+          '900': '#263d37',
+          '950': '#142220',
+        },
+        midnight: {
+          '50': '#f2f5fc',
+          '100': '#e2eaf8',
+          '200': '#ccdaf4',
+          '300': '#abc3ec',
+          '400': '#85a6e1',
+          '500': '#6988d8',
+          '600': '#526dca',
+          '700': '#4459b5',
+          '800': '#3c4a94',
+          '900': '#344076',
+          '950': '#222848',
+        },
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -68,28 +95,44 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0'
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)'
+          }
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)'
+          },
+          to: {
+            height: '0'
+          }
+        },
+        'pulse-slow': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
+        },
+        'fade-in': {
+          from: {
+            opacity: '0',
+            transform: 'translateY(10px)'
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        }
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+        'fade-in': 'fade-in 0.5s ease-out'
+      }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
